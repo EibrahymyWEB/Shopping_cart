@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Azicode Store</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Azicode Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button class="btn btn-outline-light my-2 my-sm-0" id="cartIcon" style="margin-right: 20px;">
+                        <i class="fas fa-shopping-cart"></i> Panier
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-light my-2 my-sm-0" id="newProductBtn">
+                        Nouveau Produit
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Formulaire pour ajouter des produits -->
+    <div class="container mt-5" id="productFormContainer" style="display: none;">
+        <h3 class="text-center">Ajouter un produit</h3>
+        <form id="productForm" class="form-row">
+            <div class="form-group col-md-4">
+                <label for="productTitle">Titre du produit :</label>
+                <input type="text" class="form-control" name="titre" placeholder="Nom du produit" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="productImage">Image du produit :</label>
+                <input type="url" class="form-control" name="image" placeholder="URL de l'image" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="productPrice">Prix du produit :</label>
+                <input type="number" class="form-control" name="prix" placeholder="Prix en dh" required>
+            </div>
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Annuler</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Section pour afficher les produits -->
+    <div class="container">
+        <div class="container mt-5">
+            <h3 class="text-center">Produits disponibles</h3>
+            <div class="row" id="productContainer"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="product-item card">
+                    <img src="img1.webp" alt="lenovo" class="card-img-top" style="height: 220px;">
+                    <div class="card-body">
+                        <h5 class="card-title">produit1</h5>
+                        <p class="card-text">4000 dh</p>
+                        <button class="btn btn-success" >Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-item card">
+                    <img src="img2.jfif" alt="lenovo" class="card-img-top"style="height: 220px;">
+                    <div class="card-body">
+                        <h5 class="card-title">produit2</h5>
+                        <p class="card-text">4500 dh</p>
+                        <button class="btn btn-success" >Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-item card">
+                    <img src="img3.jpg" alt="lenovo" class="card-img-top"style="height: 220px;">
+                    <div class="card-body">
+                        <h5 class="card-title">produit3</h5>
+                        <p class="card-text">3000 dh</p>
+                        <button class="btn btn-success" >Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-item card">
+                    <img src="img4.jfif" alt="lenovo" class="card-img-top"style="height: 220px;">
+                    <div class="card-body">
+                        <h5 class="card-title">produit4</h5>
+                        <p class="card-text">5200 dh</p>
+                        <button class="btn btn-success" >Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+
+        <!-- Dropdown du panier -->
+        <div class="cart-dropdown" id="cartDropdown">
+            <h5>Mon Panier</h5>
+            <div id="cartItems"></div>
+            <div>
+                <strong>Total :</strong> <span id="totalPrice">0 dh</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
